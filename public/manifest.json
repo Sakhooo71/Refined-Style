@@ -1,0 +1,21 @@
+{
+  "name": "Refined Style",
+  "short_name": "RefinedStyle",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#491C52",
+  "theme_color": "#EEE029",
+  "description": "Boutique tendance, mode et lifestyle 2026.",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

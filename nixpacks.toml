@@ -1,0 +1,12 @@
+[phases.setup]
+nixPkgs = ["php83", "php83Packages.composer", "php83Extensions.zip"]
+
+[phases.build]
+cmds = [
+  "composer install --no-dev --optimize-autoloader --no-interaction"
+]
+
+[start]
+cmd = "php -S 0.0.0.0:$PORT -t public"
+
+

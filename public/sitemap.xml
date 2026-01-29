@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ app.request ? app.request.scheme ~ '://' ~ app.request.host ~ path('app_default') }}</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ app.request ? app.request.scheme ~ '://' ~ app.request.host ~ path('app_categories') }}</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ app.request ? app.request.scheme ~ '://' ~ app.request.host ~ path('app_products') }}</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Ajoute d'autres URLs importantes ici -->
+</urlset>

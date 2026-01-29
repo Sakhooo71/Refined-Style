@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\CartItem;
 use App\Entity\FavoriteItem;
+use App\Entity\Review;
+use App\Form\ReviewType;
 use App\Repository\ProductRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -93,17 +95,39 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/product/{id<\d+>}', name: 'app_product_details')]
-    public function productDetails($id, ProductRepository $productRepository): Response
-    {
+    public function productDetails(
+        $id,
+        ProductRepository $productRepository,
+        Request $request,
+        EntityManagerInterface $entityManager
+    ): Response {
         $product = $productRepository->find($id);
 
         if (!$product) {
             throw $this->createNotFoundException('Product not found.');
         }
 
+        $review = new Review();
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $review->setProduct($product);
+            $review->setUser($this->getUser());
+            $review->setCreatedAt(new \DateTimeImmutable());
+
+            $entityManager->persist($review);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_product_details', ['id' => $product->getId()]);
+        }
+
         return $this->render('default/product_details.html.twig', [
             'product' => $product,
-        ]);    }
+            'reviewForm' => $form->createView(),
+            'reviews' => $product->getReviews(),
+        ]);
+    }
 
     #[Route('/category/{id}/products', name: 'app_category_products')]
     public function categoryProducts($id, CategoryRepository $categoryRepository, ProductRepository $productRepository): Response

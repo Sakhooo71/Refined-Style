@@ -9,7 +9,7 @@
 
 	{% if cartItems is empty %}
 		<div class="container text-center mt-3 py-3">
-			<img src="/images/empty-cart.gif" alt="Empty Cart" class="mb-4" width="150px">
+			<img src="/images/empty-cart.gif" alt="Empty Cart" class="mb-4" width="150px" loading="lazy">
 			<p>Your shopping cart is empty</p>
 			<p class="mb-4">Looks like you haven't yet made your choice. Need inspiration?</p>
 			<a href="{{ path('app_products') }}" class="btn btn-primary btn-shopping">Do my shopping</a>

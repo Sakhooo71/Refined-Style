@@ -12,7 +12,7 @@
 				<div class="col-md-6 border-end main_image">
 
 
-					<img src="{{ asset(product.productImage) | imagine_filter('product_thumbnail') }}" width="400">
+					<img src="{{ asset(product.productImage) | imagine_filter('product_thumbnail') }}" width="400" loading="lazy">
 
 
 				</div>
@@ -37,6 +37,34 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Leave a review</h3>
+				{{ form_start(reviewForm) }}
+				{{ form_widget(reviewForm) }}
+				<button class="btn btn-dark mt-3">Submit</button>
+				{{ form_end(reviewForm) }}
+			</div>
+			<div class="col-md-6">
+				<h3>Reviews</h3>
+				{% for review in reviews %}
+					<div class="card mb-3">
+						<div class="card-body">
+							<h5 class="card-title">Rating: {{ review.rating }}/5</h5>
+							<p class="card-text">{{ review.comment }}</p>
+							<p class="card-text">
+								<small class="text-muted">By {{ review.user.firstName }} on {{ review.createdAt|date('Y-m-d') }}</small>
+							</p>
+						</div>
+					</div>
+				{% else %}
+					<p>No reviews yet.</p>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

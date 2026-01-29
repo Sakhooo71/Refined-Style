@@ -1,6 +1,151 @@
+/* Bottom navigation mobile 2026 */
+.bottom-nav-2026 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: #232336;
+    border-top: 1px solid #EEE029;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3000;
+    height: 60px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+.bottom-nav-2026 a {
+    color: #EEE029;
+    text-align: center;
+    flex: 1;
+    font-size: 1.1em;
+    padding: 6px 0 0 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.2s;
+}
+.bottom-nav-2026 a:active, .bottom-nav-2026 a:focus {
+    background: #491C52;
+}
+.bottom-nav-2026 i {
+    font-size: 1.4em;
+}
+.bottom-nav-2026 span {
+    font-size: 0.8em;
+    margin-top: 2px;
+}
+@media (min-width: 768px) {
+    .bottom-nav-2026 { display: none; }
+}
+/* Mode accessibilité : contraste élevé et grosses polices */
+.a11y-mode {
+    background: #000 !important;
+    color: #fff !important;
+    font-size: 1.25em !important;
+}
+.a11y-mode .navbar, .a11y-mode .card, .a11y-mode .modal-content {
+    background: #222 !important;
+    color: #fff !important;
+}
+.a11y-mode a, .a11y-mode .navbar a, .a11y-mode .navbar button {
+    color: #FFD700 !important;
+    font-weight: bold;
+}
+.a11y-mode .btn, .a11y-mode button {
+    font-size: 1.1em !important;
+    border-width: 2px;
+}
+/* Toast notifications 2026 */
+.toast-2026 {
+    min-width: 220px;
+    max-width: 350px;
+    background: #232336;
+    color: #EEE029;
+    padding: 16px 32px 16px 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    font-size: 1rem;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.toast-2026-success { border-left: 5px solid #4caf50; }
+.toast-2026-error { border-left: 5px solid #f44336; }
+.toast-2026-info { border-left: 5px solid #2196f3; }
+.toast-2026-warning { border-left: 5px solid #ff9800; }
+.toast-2026-close {
+    background: none;
+    border: none;
+    color: #EEE029;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 10px;
+    line-height: 1;
+}
+/* Loader animé 2026 */
+.loader-2026 {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.loader-2026 div {
+    position: absolute;
+    border: 4px solid #EEE029;
+    opacity: 1;
+    border-radius: 50%;
+    animation: loader2026 1.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loader-2026 div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.loader-2026 div:nth-child(3) {
+    animation-delay: -0.6s;
+}
+.loader-2026 div:nth-child(4) {
+    animation-delay: -0.9s;
+}
+@keyframes loader2026 {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
 body {
     font-family: 'Josefin Sans', sans-serif;
     background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #181824 !important;
+    color: #e0e0e0 !important;
+}
+.dark-mode .navbar {
+    background-color: #232336 !important;
+}
+.dark-mode a, .dark-mode .navbar a, .dark-mode .navbar button {
+    color: #EEE029 !important;
+}
+.dark-mode .card, .dark-mode .modal-content {
+    background: #232336 !important;
+    color: #e0e0e0 !important;
 }
 
 

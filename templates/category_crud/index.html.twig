@@ -21,7 +21,7 @@
             {% for category in categories %}
                 <tr>
                     <td>{{ category.categoryName }}</td>
-                    <td><img src="{{ asset('uploads/categories/' ~ category.categoryImage) }}" alt="" width="80"></td>
+                    <td><img src="{{ asset('uploads/categories/' ~ category.categoryImage) }}" alt="" width="80" loading="lazy"></td>
                     <td>
                         <a href="{{ path('app_category_crud_show', {'id': category.id}) }}" class="mx-2" data-toggle="tooltip" data-placement="top" title="Show">
                             <i class="far fa-eye"></i>

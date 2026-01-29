@@ -30,7 +30,7 @@
                         <td>{{ product.id }}</td>
                         <td>{{ product.productName }}</td>
                         <td>{{ product.productPrice }}</td>
-                        <td><img src="{{ asset(product.productImage ?: 'uploads/default.jpg') }}" alt="{{ product.productName }}" width="80"></td>
+                        <td><img src="{{ asset(product.productImage ?: 'uploads/default.jpg') }}" alt="{{ product.productName }}" width="80" loading="lazy"></td>
                         <td>{{ product.shortDescription }}</td>
                         <td>{{ product.longDescription | raw }}</td>
                         <td>{{ product.productBrand }}</td>

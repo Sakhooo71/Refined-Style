@@ -13,7 +13,7 @@
 			{% for product in products %}
 				<div class="col-md-4 mb-4">
 					<div class="card">
-						<img src="{{ asset(product.productImage) | imagine_filter('product_thumbnail') }}" class="card-img-top" alt="{{ product.productName }}">
+						<img src="{{ asset(product.productImage) | imagine_filter('product_thumbnail') }}" class="card-img-top" alt="{{ product.productName }}" loading="lazy">
 						<div class="card-body">
 							<p class="card-title">
 								<strong>{{ product.category }}</strong>

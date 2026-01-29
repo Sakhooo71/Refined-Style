@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		{# SEO meta tags 2026 #}
+		<meta name="description" content="{% block meta_description %}Boutique tendance, mode et lifestyle 2026. Découvrez nos collections, offres et produits exclusifs.{% endblock %}">
+		<meta name="keywords" content="{% block meta_keywords %}mode, boutique, ecommerce, tendance, 2026, collections, offres, produits{% endblock %}">
+		<meta property="og:title" content="{% block og_title %}{% block title %}Welcome!{% endblock %}{% endblock %}">
+		<meta property="og:description" content="{% block og_description %}Boutique tendance, mode et lifestyle 2026. Découvrez nos collections, offres et produits exclusifs.{% endblock %}">
+		<meta property="og:image" content="{{ asset('images/logo.png') }}">
+		<meta property="og:url" content="{{ app.request ? app.request.uri : '' }}">
+		<meta name="robots" content="index, follow">
 		<meta charset="UTF-8">
 		<title>
 			{% block title %}Welcome!
@@ -15,6 +23,22 @@
 			<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 			<link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+			<style>
+				.dark-mode {
+					background: #181824 !important;
+					color: #e0e0e0 !important;
+				}
+				.dark-mode .navbar {
+					background-color: #232336 !important;
+				}
+				.dark-mode a, .dark-mode .navbar a, .dark-mode .navbar button {
+					color: #EEE029 !important;
+				}
+				.dark-mode .card, .dark-mode .modal-content {
+					background: #232336 !important;
+					color: #e0e0e0 !important;
+				}
+			</style>
 			
 		
 		{% endblock %}
@@ -27,7 +51,23 @@
 			{% endblock %}
 		{% endblock %}
 	</head>
+			<!-- Plausible Analytics (RGPD friendly) -->
+			<script defer data-domain="refined-style.example.com" src="https://plausible.io/js/plausible.js"></script>
 	<body>
+		<!-- Bouton accessibilité -->
+		<div style="position:fixed;top:60px;right:20px;z-index:2000">
+			<button id="accessibilityToggle" class="btn btn-outline-warning btn-sm" aria-pressed="false" aria-label="Activer le mode accessibilité">
+				<i class="bi bi-universal-access"></i> Accessibilité
+			</button>
+		</div>
+		<!-- Toast notifications -->
+		<div id="toastContainer2026" style="position:fixed;top:30px;right:30px;z-index:4000;"></div>
+			<!-- Loader animé moderne -->
+			<div id="globalLoader" style="position:fixed;z-index:3000;top:0;left:0;width:100vw;height:100vh;background:rgba(24,24,36,0.95);display:flex;align-items:center;justify-content:center;transition:opacity 0.4s;">
+				<div class="loader-2026">
+					<div></div><div></div><div></div><div></div>
+				</div>
+			</div>
 
 		<style>
 
@@ -35,10 +75,16 @@
 		</style>
 
 		<div class="index">
+			<!-- Bouton Dark Mode -->
+			<div style="position:fixed;top:10px;right:20px;z-index:2000">
+				<button id="darkModeToggle" class="btn btn-outline-secondary btn-sm">
+					<i class="bi bi-moon"></i> Mode sombre
+				</button>
+			</div>
 
 			<nav class="navbar navbar-expand-lg navbar-light sticky-top p-3">
 				<div class="container-fluid">
-					<a href="{{ path('app_default') }}" class="navbar-brand d-none d-lg-block"><img src="{{ asset('images/logo.png') }}" alt="" width="34px"></a>
+					<a href="{{ path('app_default') }}" class="navbar-brand d-none d-lg-block" aria-label="Accueil"><img src="{{ asset('images/logo.png') }}" alt="Logo Refined Style" width="34px" loading="lazy"></a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -135,6 +181,71 @@
 
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script>
+			// Mode accessibilité : contraste élevé et grosses polices
+			$(function() {
+				const a11yKey = 'a11yMode2026';
+				function setA11yMode(on) {
+					if(on) {
+						$('body').addClass('a11y-mode');
+						localStorage.setItem(a11yKey, '1');
+					} else {
+						$('body').removeClass('a11y-mode');
+						localStorage.removeItem(a11yKey);
+					}
+				}
+				$('#accessibilityToggle').on('click', function() {
+					setA11yMode(!$('body').hasClass('a11y-mode'));
+				});
+				if(localStorage.getItem(a11yKey)) {
+					setA11yMode(true);
+				}
+			});
+			</script>
+			<script>
+			// Toast notification system 2026
+			function showToast2026(message, type = 'success', duration = 3500) {
+				const container = document.getElementById('toastContainer2026');
+				if (!container) return;
+				const toast = document.createElement('div');
+				toast.className = `toast-2026 toast-2026-${type}`;
+				toast.innerHTML = `<span>${message}</span><button onclick="this.parentNode.remove()" class="toast-2026-close">&times;</button>`;
+				container.appendChild(toast);
+				toast.querySelector('.toast-2026-close').setAttribute('aria-label', 'Fermer la notification');
+				setTimeout(() => { toast.style.opacity = 0; setTimeout(() => toast.remove(), 400); }, duration);
+			}
+			</script>
+				<script>
+				// Loader animé moderne 2026
+				window.addEventListener('load', function() {
+					const loader = document.getElementById('globalLoader');
+					if(loader) {
+						loader.style.opacity = 0;
+						setTimeout(() => loader.style.display = 'none', 400);
+					}
+				});
+				</script>
+		<script>
+		// Dark mode toggle
+		$(function() {
+			const darkModeKey = 'darkMode2026';
+			function setDarkMode(on) {
+				if(on) {
+					$('body').addClass('dark-mode');
+					localStorage.setItem(darkModeKey, '1');
+				} else {
+					$('body').removeClass('dark-mode');
+					localStorage.removeItem(darkModeKey);
+				}
+			}
+			$('#darkModeToggle').on('click', function() {
+				setDarkMode(!$('body').hasClass('dark-mode'));
+			});
+			if(localStorage.getItem(darkModeKey)) {
+				setDarkMode(true);
+			}
+		});
+		</script>
 		<script>
 		$(document).ready(function() {
     $('.ajax-form').on('submit', function(e) {
@@ -153,54 +264,54 @@
 function adjustQuantity (action, productId) {
     let url = (action === 'increment') ? '/cart/increment/' + productId : '/cart/decrement/' + productId;
 
-    fetch(url, {method: 'POST'}).then(response => response.json()).then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert(data.message);
-        }
-    });
+	fetch(url, {method: 'POST'}).then(response => response.json()).then(data => {
+		if (data.success) {
+			location.reload();
+		} else {
+			showToast2026(data.message || 'Erreur lors de la modification du panier', 'error');
+		}
+	});
 }
 
 function removeFromCart (productId) {
-    fetch('/cart/remove/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert(data.message);
-        }
-    });
+	fetch('/cart/remove/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
+		if (data.success) {
+			location.reload();
+		} else {
+			showToast2026(data.message || 'Erreur lors de la suppression du panier', 'error');
+		}
+	});
 }
 
 function clearCart () {
-    fetch('/cart/clear', {method: 'POST'}).then(response => response.json()).then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert(data.message);
-        }
-    });
+	fetch('/cart/clear', {method: 'POST'}).then(response => response.json()).then(data => {
+		if (data.success) {
+			location.reload();
+		} else {
+			showToast2026(data.message || 'Erreur lors du vidage du panier', 'error');
+		}
+	});
 }
 
 function addToFavorites (productId) {
-    fetch('/favorite/add/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert(data.message);
-        }
-    });
+	fetch('/favorite/add/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
+		if (data.success) {
+			location.reload();
+		} else {
+			showToast2026(data.message || 'Erreur lors de l\'ajout aux favoris', 'error');
+		}
+	});
 }
 
 
 function removeFromFavorites (productId) {
-    fetch('/favorite/remove/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert(data.message);
-        }
-    });
+	fetch('/favorite/remove/' + productId, {method: 'POST'}).then(response => response.json()).then(data => {
+		if (data.success) {
+			location.reload();
+		} else {
+			showToast2026(data.message || 'Erreur lors du retrait des favoris', 'error');
+		}
+	});
 }
 
 $(document).ready(function() {
@@ -240,4 +351,12 @@ $(document).ready(function() {
 
 		</script>
 	</body>
+		<!-- Bottom navigation mobile -->
+		<nav id="bottomNav2026" class="bottom-nav-2026 d-md-none">
+			<a href="{{ path('app_default') }}" aria-label="Accueil"><i class="bi bi-house"></i><span>Accueil</span></a>
+			<a href="{{ path('app_categories') }}" aria-label="Collections"><i class="bi bi-grid"></i><span>Collections</span></a>
+			<a href="{{ path('app_products') }}" aria-label="Produits"><i class="bi bi-bag"></i><span>Produits</span></a>
+			<a href="{{ path('app_favorite') }}" aria-label="Favoris"><i class="bi bi-heart"></i><span>Favoris</span></a>
+			<a href="{{ path('app_cart') }}" aria-label="Panier"><i class="bi bi-cart"></i><span>Panier</span></a>
+		</nav>
 </html>

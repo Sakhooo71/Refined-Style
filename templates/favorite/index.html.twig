@@ -14,7 +14,7 @@
 					{% set product = favoriteItem.product %}
 					<div class="col-md-4 mb-4">
 						<div class="card">
-							<img src="{{asset('uploads/products/'~product.productImage)}}" class="card-img-top" alt="{{ product.productName }}">
+							<img src="{{asset('uploads/products/'~product.productImage)}}" class="card-img-top" alt="{{ product.productName }}" loading="lazy">
 							<div class="card-body">
 								<p class="card-title">
 									<strong>{{ product.category }}</strong>
