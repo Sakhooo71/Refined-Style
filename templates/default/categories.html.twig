@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block title %}Collections
+{% endblock %}
+{% block body %}
+
+	
+
+	<div class="container-fluid categories-bg">
+
+		<div class="row image-hero-category"></div>
+
+
+		<div class="container pb-5">
+			<div class="row card-row">
+				{% for category in categories %}
+					<div class="col-md-4">
+						<div class="card">
+							<img class="category-image" src="{{asset('uploads/categories/'~category.categoryImage)}}" alt="">
+							<div class="card-body">
+								<h3 class="card-title">{{category.categoryName}}</h3>
+								<a href="{{ path('app_category_products', {'id': category.id}) }}" class="btn btn-primary btn-product">View products</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="py-3" style="background-color: #222222;">
+		<div class="container-fluid">
+			<ul class="nav justify-content-center border-bottom pb-3 mb-3">
+				<li class="nav-item">
+					<a href="#" class="nav-link px-2" style="color: #fff;">Collections</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link px-2" style="color: #fff;">Products</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link px-2" style="color: #fff;">Offers</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link px-2" style="color: #fff;">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link px-2" style="color: #fff;">About</a>
+				</li>
+			</ul>
+			<p class="text-center" style="color: #fff;">
+				All rights reserved &copy; 2023</p>
+		</div>
+	</footer>
+{% endblock %}

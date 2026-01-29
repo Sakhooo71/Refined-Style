@@ -1,0 +1,19 @@
+liip_imagine:
+    # Indique au bundle où trouver les images originales
+    resolvers:
+        default:
+            web_path: ~
+
+    # Définit les différents jeux de filtres
+    filter_sets:
+        cache: ~
+
+        # Le nom de notre premier filtre
+        product_thumbnail:
+            # Qualité de l'image JPEG générée
+            quality: 75
+
+            # Liste des filtres à appliquer dans l'ordre
+            filters:
+                # Crée une miniature de 300x300. Le mode "outbound" rogne l'image si les proportions diffèrent.
+                thumbnail: { size: [300, 300], mode: outbound }

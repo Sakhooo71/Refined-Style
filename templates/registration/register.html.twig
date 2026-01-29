@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<style>
+   
+    }
+</style>
+
+<div class="register-container">
+    <div class="card card-register">
+        <div class="card-body">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Register</h1>
+            {{ form_start(registrationForm) }}
+                <div class="my-3">
+                    <label for="">First name</label>
+                    {{form_row(registrationForm.firstName, {'attr':{'class':'form-control'}})}}
+                </div>
+                <div class="my-3">
+                    <label for="">Last name</label>
+                    {{form_row(registrationForm.lastName, {'attr':{'class':'form-control'}})}}
+                </div>
+                <div class="my-3">
+                    <label for="">Email</label>
+                    {{form_row(registrationForm.email, {'attr':{'class':'form-control'}})}}
+                </div>
+                <div class="my-3">
+                    <label for="">Password</label>
+                    {{form_row(registrationForm.plainPassword, {'attr':{'class':'form-control'}})}}
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-register btn-lg btn-sm mb-3">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

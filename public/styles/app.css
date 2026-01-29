@@ -1,0 +1,654 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #fff;
+}
+
+
+/* CSS of navbar */
+
+/* Styles for general nav link alignment */
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for the navbar list - Removing the default bullet points and padding */
+.my-navbar {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Margin to space out navbar items */
+.my-navbar .nav-item {
+    margin-right: 20px;
+}
+
+/* Cursor style to indicate clickable nav links */
+.my-navbar a.nav-link {
+    cursor: pointer;
+}
+
+/* Base styling for the navbar including background color and shadow */
+.navbar {
+    background-color: #491C52;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+/* Default text color for links and buttons in the navbar */
+.navbar a,
+.navbar button {
+    color: #FFF;
+}
+
+/* Hover effect colors for links and buttons in the navbar */
+.navbar a:hover,
+.navbar button:hover {
+    color: #D1C522;
+}
+
+/* NOTE: The next three hover effects are redundant, they all achieve the same outcome. You might want to pick one for consistency. */
+
+/* Hover effect for individual nav items */
+.navbar .nav-item a:hover,
+.navbar .nav-item button:hover {
+    color: #D1C522;
+}
+
+/* Hover effect specifically for icons within the navbar items - this assumes you have some icons within your links/buttons */
+.navbar .nav-item a:hover mat-icon,
+.navbar .nav-item button:hover mat-icon {
+    color: #D1C522;
+}
+
+/* To ensure dropdown links do not inherit the above hover styles */
+/* NEW: Style modifications to prevent hover effects on dropdown items */
+.navbar .dropdown-menu a {
+    color: inherit;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: inherit;
+}
+
+.fas.fa-user {
+    margin-right: 5px;
+}
+
+
+/* CSS of footer */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-login {
+    width: 350px; 
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-login {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-login:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+
+.btn-collection {
+    background-color: #eee029;
+    color: #491c52;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-collection:hover {
+    background-color: #491c52;
+    color: #eee029;
+}
+
+.fav-icon {
+    color: #c492b1;
+}
+
+.fav-icon:hover {
+    color: #c52491;
+}
+
+.shopping-icon {
+    color: #9b87b7;
+}
+
+.shopping-icon:hover {
+    color: #491c52;
+}
+
+
+.info-icon {
+    color: #222222;
+
+}
+
+.info-icon:hover {
+    color: #d1c522;
+}
+
+.navigation {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    --bs-pagination-color: #491c52;
+    --bs-pagination-hover-color: #491c52;
+    --bs-pagination-focus-color: #491c52;
+    --bs-pagination-active-bg: #491c52;
+    --bs-pagination-active-border-color: #491c52;
+    --bs-pagination-focus-box-shadow: none;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+.btn-new {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-new:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+.scrollable-table {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.btn-delete {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    color: #a94442;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.btn-collection {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-collection:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+.btn-new {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-new:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.hero-home {
+    padding-top: 125px;
+    padding-bottom: 125px;
+    background-image: url('../images/hero_image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 58px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 700;
+    padding-left: 100px;
+}
+
+h1 span {
+    color: #EEE029;
+}
+
+.lead {
+    color: #fff;
+    font-size: 18px;
+    padding-left: 100px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.btn-collection {
+    margin-left: 100px;
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-collection:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+h2 {
+    font-size: 42px;
+    color: #491C52;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+.p-collection {
+    font-size: 18px;
+    color: #222222;
+    margin-bottom: 48px;
+}
+
+.btn-product {
+    background-color: #491C52;
+    border: none;
+    color: #fff;
+}
+
+.btn-product:hover {
+    background-color: #BFAEC6;
+    color: #491C52;
+    font-weight: 600;
+}
+
+.card {
+    padding-bottom: 18px;
+}
+
+.title3 {
+    line-height: 48px;
+}
+
+.text3 {
+    font-size: 18px;
+    color: #222222;
+}
+
+.btn-info {
+    margin-top: 48px;
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-info:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+h3 {
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-size: 34px;
+    color: #491C52;
+}
+
+.section5 {
+    padding: 100px 125px;
+    background-color: #F3AE59;
+}
+
+.btn-news {
+    background-color: #222222;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-top: 24px;
+}
+
+.btn-news:hover {
+    background-color: #fff;
+    color: #222222;
+}
+
+.form-group {
+    border: none;
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.star {
+    color: #F3AE59;
+}
+
+@media screen and (max-width: 768px) {
+    h1,
+    .lead,
+    .btn-collection {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .section5 {
+        padding: 50px;
+    }
+}
+
+.fav-icon {
+    color: #c492b1;
+}
+
+.fav-icon:hover {
+    color: #c52491;
+}
+
+.shopping-icon {
+    color: #9b87b7;
+}
+
+.shopping-icon:hover {
+    color: #491c52;
+}
+
+
+.info-icon {
+    color: #222222;
+
+}
+
+.info-icon:hover {
+    color: #d1c522;
+}
+
+
+h3 {
+    font-weight: 700;
+}
+
+.categories-bg {
+    background-color: #fff;
+}
+
+.image-hero-category {
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url("../images/hero-categorie.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    margin-bottom: 48px;
+}
+.card-row {
+    row-gap: 24px;
+}
+
+.btn-product {
+    background-color: #491c52;
+    border: none;
+    color: #fff;
+}
+
+.btn-product:hover {
+    background-color: #bfaec6;
+    color: #491c52;
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    padding-bottom: 18px;
+}
+
+
+.page-title {
+    text-align: center;
+    padding: 20px 0;
+}
+.order-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+.order-details {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+.order-details:hover {
+    color: #555;
+    transform: scale(1.1);
+}
+
+.btn-continue {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-continue:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+
+#cardDetails {
+
+    width: 350px;
+    margin: 0 auto; /* This will center the card if its parent container is flex or grid */
+}
+
+#paypal-checkout-btn {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+.page-title {
+    text-align: center;
+    padding: 20px 0;
+}
+.order-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+.order-details {
+    color: inherit;     
+    text-decoration: none;  
+    cursor: pointer;   
+    transition: color 0.3s, transform 0.3s; 
+}
+.order-details:hover {
+    color: #555;      
+    transform: scale(1.1); 
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+
+.btn-send {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-send:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+.btn-new {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-new:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+.btn-delete {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    color: #a94442;
+}
+
+.btn-save {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-save:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+.btn-shopping {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-shopping:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+a {
+    color: #491C52;
+    text-decoration: none;
+}
+
+.btn-new {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-new:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}
+
+
+.btn-save {
+    background-color: #EEE029;
+    color: #491C52;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.btn-save:hover {
+    background-color: #491C52;
+    color: #EEE029;
+}

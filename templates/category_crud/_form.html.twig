@@ -1,0 +1,19 @@
+<div class="container">
+	{{ form_start(form) }}
+
+	
+
+	<div class="my-3">
+
+		<label for="">Category Name</label>
+		{{form_row(form.categoryName, {'attr':{'class':'form-control'}})}}
+	</div>
+
+	<div class="my-3">
+		<label for="">Category Image</label>
+		{{form_row(form.categoryImage, {'attr':{'class':'form-control'}})}}
+	</div>
+
+	<button class="btn btn-primary btn-save btn-lg btn-sm mb-3">{{ button_label|default('Save') }}</button>
+	{{ form_end(form) }}
+</div>
